@@ -1,88 +1,66 @@
-# SporeCoop — локальная кооперативная сборка
+# SporeCoop — Local Multiplayer Mod (Alpha 1)
 
-Текущая сборка предназначена для проверки кооператива этапа «Клетка» в двух окнах на одном ПК. Сервер и DLL поддерживают две роли, приглашение через паузу, автоматическую загрузку гостевого профиля, сетевого клона, полную модель клетки, общий прогресс и экспериментальную синхронизацию редактора.
+SporeCoop is an experimental local co-op mod for SPORE. It is designed to let two SPORE instances on the same PC share a game session, with a future LAN/Radmin VPN mode planned for remote players.
 
-Это ещё не подтверждённый пользователем релиз: автоматические тесты не запускают SPORE. Перед Radmin VPN сначала нужно пройти ручную проверку двух локальных окон по списку ниже.
+The project is currently **Alpha 1**. It is a development and testing build, not a finished release. Crashes, visual differences, desynchronisation, and unsupported stages are still possible.
 
-`coopSpawn` больше не выбирает случайную модель из клеточного ресурса и не перехватывает небезопасный внутренний резолвер модели. Команда на время штатного вызова `CreateCellObject` помечает вложение модели как `PlayerCreature`, сразу восстанавливает исходный тип, а затем копирует текущий масштаб, целевой размер и прозрачность игрока. Проверка 16 сентября 2026 года прошла без вылета: в консоли и `%TEMP%\SporeCoop.Probe.log` совпали model ID (`0xE219E5D0`), масштаб (`0.5500`) и целевой размер (`0.5500`), а визуально появился второй объект того же вида.
+## What the mod is for
 
-Для корректного запуска через ModAPI был снят пользовательский флаг совместимости `RUNASADMIN` только с `C:\Games\SPORE Collection\SporebinEP1\SporeApp.exe`. Резервная копия исходной записи находится в `SporeApp-AppCompat-backup.reg`.
+The mod explores how two players can experience the same SPORE world together. The host and guest instances communicate through a small TCP session server and exchange gameplay state.
 
-## Проверка протокола
+Current experimental goals include:
 
-```powershell
-.\Test-Server.ps1
-```
+- inviting a second player from the in-game pause menu;
+- accepting an invitation and joining the host's saved world;
+- displaying a network clone of the other player;
+- synchronising creature appearance, position, scale, and species data;
+- sharing cell-stage progress, food progress, unlocked parts, and editor state;
+- running two isolated SPORE profiles and two ModAPI instances on one PC;
+- providing diagnostic console commands such as `coopStatus`, `coopSpawn`, and `coopJoin`.
 
-Тест собирает сервер, запускает два TCP-клиента и выполняет 52 протокольные проверки: host/guest токены, версию протокола, внешний вид, приглашение, общий прогресс и tutorial-флаги, редактор, дедупликацию, фрагментацию TCP, сохранение и переподключение. Он не проверяет игровой движок.
+## Alpha 1 limitations
 
-Инварианты жизненного цикла DLL проверяются отдельно:
+This version has not been validated across every SPORE stage. The protocol and server are tested automatically, but the tests do not drive the SPORE game engine. Creature-stage transitions, tutorials, quests, editor transitions, and unusual save states may still cause crashes or incomplete synchronisation. Remote play over Radmin VPN/ZeroTier/Hamachi is prepared at the protocol level, but complete world transfer and reliable cross-machine testing are not finished.
 
-```powershell
-node .\tests\native-source.test.mjs
-```
+## Requirements
 
-## Локальная LAN-сессия
+- Windows and a working SPORE installation;
+- SPORE ModAPI Launcher Kit;
+- the same mod build in both game instances;
+- PowerShell 5.1 or newer;
+- Visual Studio build tools if rebuilding the native DLL.
 
-Нужен виртуальный адрес Radmin VPN/ZeroTier/Hamachi, например `25.x.x.x`. Хост запускает:
+## Running two local instances
 
-```powershell
-.\SporeCoop.Server.exe --listen 25.x.x.x --port 5523 --host-token <длинный-токен-хоста> --guest-token <токен-друга>
-```
-
-Гостевой экземпляр DLL использует тот же порт, адрес хоста, guest token и ту же версию протокола. Для игры через Radmin другу пока также нужна совместимая локальная копия сохранения; передача мира хоста через сеть ещё не реализована.
-
-## Два локальных окна для проверки
-
-Для второго процесса создан отдельный Launcher Kit `C:\ProgramData\SPORE ModAPI Launcher Kit 2` и отдельный профиль `%AppData%\SporeCoop2`. Исходное содержимое профиля было скопировано из `%AppData%\Spore`, но после запуска обе игры сохраняются раздельно. DLL профиля №2 также переименовывает mutex Spore, поэтому проверка одного запущенного экземпляра не блокирует второе окно.
-
-Отдельный экземпляр можно запустить прямым инжектором:
-
-```powershell
-.\Start-SporeCoopInstance.ps1 -Profile 2
-```
-
-Для одновременного запуска двух окон используется:
+Use:
 
 ```powershell
 .\Start-TwoSpore.ps1
 ```
 
-Та же команда доступна через ярлык `SPORE Coop - 2 окна` на рабочем столе.
+This creates/uses the isolated second profile at `%AppData%\SporeCoop2`, installs the latest DLL in both Launcher Kit folders, starts the session server, and launches host and guest instances. The desktop shortcut `SPORE Coop - 2 окна` runs the same workflow.
 
-Перед новым запуском `Start-TwoSpore.ps1` копирует актуальную кампанию из
-`%AppData%\Spore` в изолированный профиль `%AppData%\SporeCoop2` и устанавливает
-последнюю собранную DLL в оба Launcher Kit. Хост загружает сохранённый мир,
-открывает меню `Esc` и нажимает `Invite friend to co-op`. Во втором окне нужно
-нажать `Accept co-op invitation`; после принятия гостевой профиль автоматически
-загружает свежую копию мира. Если загрузка не сработала, диагностическая команда
-`coopJoin` остаётся доступной. `coopSpawn` не подключает второго игрока — это
-только ручная команда создания NPC-клона.
+The host loads a saved world and uses the pause menu's co-op invitation. The guest accepts the invitation; the guest profile then attempts to load a fresh copy of the host world. `coopJoin` remains available as a diagnostic fallback. `coopSpawn` only creates a manual diagnostic clone and is not required for normal joining.
 
-## Что проверить в игре
+## Testing
 
-1. Запустить ярлык `SPORE Coop - 2 окна`, в первом окне загрузить этап «Клетка».
-2. Открыть `Esc`, нажать приглашение и принять его во втором окне.
-3. Убедиться, что во втором окне автоматически загрузился мир, а у каждого окна только один сетевой клон.
-4. Проверить, что разные существа сохраняют собственные части и цвета в другом окне.
-5. Поесть одним игроком до роста: оба локальных игрока и оба сетевых представления должны увеличиться, игра не должна закрыться.
-6. Проверить общую нижнюю шкалу, первое задание с пищей, открытие деталей, кнопку партнёра и первый вход в редактор.
-7. Прислать `%TEMP%\SporeCoop.Probe.log` и точное последнее действие, если возникнет вылет, лишний клон или рассинхронизация.
+Run the protocol tests with:
 
-Оба профиля переведены в оконный режим, поскольку два полноэкранных DirectX 9 устройства одновременно приводили к ошибке `[1002]`. Резервная копия прежних настроек первого профиля: `%AppData%\Spore\Preferences\Preferences.prop.before-two-instances`.
+```powershell
+.\Test-Server.ps1
+node .\tests\native-source.test.mjs
+```
 
-## Ручная проверка клона
-
-1. В открытой через ModAPI игре загрузить одноразовую кампанию этапа «Клетка» или «Существо».
-2. Открыть консоль сочетанием `Ctrl+Shift+C` и выполнить `coopStatus`.
-3. Выполнить `coopSpawn` и визуально проверить появление второго объекта того же вида рядом с игроком. Команда уже проверена в этапе «Клетка»; повторный запуск нужен только при изменениях DLL.
-
-Для повторной сборки DLL:
+To rebuild the native probe DLL:
 
 ```powershell
 .\Build-Probe.ps1 -LauncherRoot 'C:\ProgramData\SPORE ModAPI Launcher Kit'
 ```
 
-Команды `coopStatus` и `coopSpawn` оставлены для диагностики. Рабочее подключение использует сетевой клон и не вызывает `coopSpawn`.
+When reporting a problem, include `%TEMP%\SporeCoop.Probe.log` and the exact last action. Useful reports include crashes during growth, duplicate clones, mismatched colours/parts, failed invitations, or quests that do not update for both players.
 
-Исходники SDK, использованные для проверки API, находятся в `vendor\Spore-ModAPI` и не копируются в DLL-папку игры.
+## Repository status
+
+This repository contains the mod source, session server, launch scripts, tests, and the Spore ModAPI headers used to build it. Generated binaries, local save data, registry backups, and temporary build output are intentionally excluded.
+
+SporeCoop is an independent community project and is not affiliated with or endorsed by Electronic Arts or Maxis.
