@@ -1,0 +1,20 @@
+bin/
+obj/
+*.user
+*.suo
+.vs/
+session.json
+session.json.tmp
+
+# Generated build output
+*.pdb
+*.ilk
+*.tlog
+vendor/**/lib/
+vendor/**/obj/
+vendor/**/Debug/
+vendor/**/Release/
+SporeCoop.Server.exe
+
+# Local/user-specific backups
+SporeApp-AppCompat*.reg

@@ -1,0 +1,23 @@
+#ifdef MODAPI_DLL_EXPORT
+#include "stdafx.h"
+#include <Spore\Anim\IAnimManager.h>
+
+namespace Anim
+{
+	namespace Addresses(AnimatedCreature)
+	{
+		DefineAddress(PlayAnimation, SelectAddress(0xA0C5D0, 0xA0C5D0));
+	}
+
+	namespace Addresses(IAnimManager)
+	{
+		DefineAddress(Get, SelectAddress(0x67CC70, 0x67CAE0));
+	}
+
+	namespace Addresses(IAnimWorld)
+	{
+		DefineAddress(LoadCreature, SelectAddress(0xA0B1C0, 0xA0B1C0));
+	}
+}
+
+#endif

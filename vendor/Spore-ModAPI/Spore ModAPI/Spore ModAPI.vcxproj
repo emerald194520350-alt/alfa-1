@@ -1,0 +1,1149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug DLL|Win32">
+      <Configuration>Debug DLL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release DLL|Win32">
+      <Configuration>Release DLL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F057451A-1413-4D68-AF56-1BF529933420}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SporeModAPI</RootNamespace>
+    <ProjectName>Spore ModAPI</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'">
+    <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;..\Detours\include\</IncludePath>
+    <TargetName>SporeModAPI</TargetName>
+    <OutDir>..\dll\Debug\</OutDir>
+    <IntDir>..\dll\</IntDir>
+    <TargetExt>.dll</TargetExt>
+    <LibraryPath>..\Detours\lib.X86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;E:\Detours\include\</IncludePath>
+    <TargetName>SporeModAPIBase</TargetName>
+    <OutDir>..\lib\Debug\</OutDir>
+    <IntDir>..\lib\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
+    <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;E:\Detours\include\</IncludePath>
+    <TargetName>SporeModAPI</TargetName>
+    <OutDir>..\dll\Release\</OutDir>
+    <IntDir>..\dll\</IntDir>
+    <LibraryPath>..\Detours\lib.X86;$(LibraryPath)</LibraryPath>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;E:\Detours\include\</IncludePath>
+    <TargetName>SporeModAPIBase</TargetName>
+    <OutDir>..\lib\Release\</OutDir>
+    <IntDir>..\lib\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;SDK_BUILD_VER=$(SDK_BUILD_VER);EXECUTABLE_TYPE=$(EXECUTABLE_TYPE);_DEBUG;_WINDOWS;_USRDLL;MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DisableSpecificWarnings>4351</DisableSpecificWarnings>
+      <PreprocessToFile>false</PreprocessToFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>MODAPI_DLL_EXPORT;SDK_BUILD_VER=$(SDK_BUILD_VER);EXECUTABLE_TYPE=$(EXECUTABLE_TYPE);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DisableSpecificWarnings>4351</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;SDK_BUILD_VER=$(SDK_BUILD_VER);EXECUTABLE_TYPE=$(EXECUTABLE_TYPE);NDEBUG;_WINDOWS;_USRDLL;MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DisableSpecificWarnings>4351</DisableSpecificWarnings>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>MODAPI_DLL_EXPORT;SDK_BUILD_VER=$(SDK_BUILD_VER);EXECUTABLE_TYPE=$(EXECUTABLE_TYPE);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DisableSpecificWarnings>4351</DisableSpecificWarnings>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="EASTL\algorithm.h" />
+    <ClInclude Include="EASTL\allocator.h" />
+    <ClInclude Include="EASTL\allocator_malloc.h" />
+    <ClInclude Include="EASTL\array.h" />
+    <ClInclude Include="EASTL\bitset.h" />
+    <ClInclude Include="EASTL\bitvector.h" />
+    <ClInclude Include="EASTL\bonus\adaptors.h" />
+    <ClInclude Include="EASTL\bonus\call_traits.h" />
+    <ClInclude Include="EASTL\bonus\compressed_pair.h" />
+    <ClInclude Include="EASTL\bonus\fixed_string_abstract.h" />
+    <ClInclude Include="EASTL\bonus\intrusive_sdlist.h" />
+    <ClInclude Include="EASTL\bonus\intrusive_slist.h" />
+    <ClInclude Include="EASTL\bonus\list_map.h" />
+    <ClInclude Include="EASTL\bonus\ring_buffer.h" />
+    <ClInclude Include="EASTL\bonus\sort_extra.h" />
+    <ClInclude Include="EASTL\bonus\sparse_matrix.h" />
+    <ClInclude Include="EASTL\bonus\string_abstract.h" />
+    <ClInclude Include="EASTL\chrono.h" />
+    <ClInclude Include="EASTL\core_allocator.h" />
+    <ClInclude Include="EASTL\core_allocator_adapter.h" />
+    <ClInclude Include="EASTL\deque.h" />
+    <ClInclude Include="EASTL\EABase\config\eacompiler.h" />
+    <ClInclude Include="EASTL\EABase\config\eacompilertraits.h" />
+    <ClInclude Include="EASTL\EABase\config\eaplatform.h" />
+    <ClInclude Include="EASTL\EABase\eabase.h" />
+    <ClInclude Include="EASTL\EABase\eahave.h" />
+    <ClInclude Include="EASTL\EABase\earesult.h" />
+    <ClInclude Include="EASTL\EABase\eastdarg.h" />
+    <ClInclude Include="EASTL\EABase\nullptr.h" />
+    <ClInclude Include="EASTL\EABase\version.h" />
+    <ClInclude Include="EASTL\fixed_allocator.h" />
+    <ClInclude Include="EASTL\fixed_hash_map.h" />
+    <ClInclude Include="EASTL\fixed_hash_set.h" />
+    <ClInclude Include="EASTL\fixed_list.h" />
+    <ClInclude Include="EASTL\fixed_map.h" />
+    <ClInclude Include="EASTL\fixed_set.h" />
+    <ClInclude Include="EASTL\fixed_slist.h" />
+    <ClInclude Include="EASTL\fixed_string.h" />
+    <ClInclude Include="EASTL\fixed_substring.h" />
+    <ClInclude Include="EASTL\fixed_vector.h" />
+    <ClInclude Include="EASTL\functional.h" />
+    <ClInclude Include="EASTL\hash_map.h" />
+    <ClInclude Include="EASTL\hash_set.h" />
+    <ClInclude Include="EASTL\heap.h" />
+    <ClInclude Include="EASTL\initializer_list.h" />
+    <ClInclude Include="EASTL\internal\allocator_traits.h" />
+    <ClInclude Include="EASTL\internal\allocator_traits_fwd_decls.h" />
+    <ClInclude Include="EASTL\internal\config.h" />
+    <ClInclude Include="EASTL\internal\copy_help.h" />
+    <ClInclude Include="EASTL\internal\enable_shared.h" />
+    <ClInclude Include="EASTL\internal\fill_help.h" />
+    <ClInclude Include="EASTL\internal\fixed_pool.h" />
+    <ClInclude Include="EASTL\internal\function.h" />
+    <ClInclude Include="EASTL\internal\functional_base.h" />
+    <ClInclude Include="EASTL\internal\generic_iterator.h" />
+    <ClInclude Include="EASTL\internal\hashtable.h" />
+    <ClInclude Include="EASTL\internal\integer_sequence.h" />
+    <ClInclude Include="EASTL\internal\intrusive_hashtable.h" />
+    <ClInclude Include="EASTL\internal\mem_fn.h" />
+    <ClInclude Include="EASTL\internal\move_help.h" />
+    <ClInclude Include="EASTL\internal\pair_fwd_decls.h" />
+    <ClInclude Include="EASTL\internal\red_black_tree.h" />
+    <ClInclude Include="EASTL\internal\smart_ptr.h" />
+    <ClInclude Include="EASTL\internal\thread_support.h" />
+    <ClInclude Include="EASTL\internal\tuple_fwd_decls.h" />
+    <ClInclude Include="EASTL\internal\type_compound.h" />
+    <ClInclude Include="EASTL\internal\type_fundamental.h" />
+    <ClInclude Include="EASTL\internal\type_pod.h" />
+    <ClInclude Include="EASTL\internal\type_properties.h" />
+    <ClInclude Include="EASTL\internal\type_transformations.h" />
+    <ClInclude Include="EASTL\intrusive_hash_map.h" />
+    <ClInclude Include="EASTL\intrusive_hash_set.h" />
+    <ClInclude Include="EASTL\intrusive_list.h" />
+    <ClInclude Include="EASTL\intrusive_ptr.h" />
+    <ClInclude Include="EASTL\iterator.h" />
+    <ClInclude Include="EASTL\linked_array.h" />
+    <ClInclude Include="EASTL\linked_ptr.h" />
+    <ClInclude Include="EASTL\list.h" />
+    <ClInclude Include="EASTL\map.h" />
+    <ClInclude Include="EASTL\memory.h" />
+    <ClInclude Include="EASTL\numeric.h" />
+    <ClInclude Include="EASTL\numeric_limits.h" />
+    <ClInclude Include="EASTL\optional.h" />
+    <ClInclude Include="EASTL\priority_queue.h" />
+    <ClInclude Include="EASTL\queue.h" />
+    <ClInclude Include="EASTL\random.h" />
+    <ClInclude Include="EASTL\ratio.h" />
+    <ClInclude Include="EASTL\safe_ptr.h" />
+    <ClInclude Include="EASTL\scoped_array.h" />
+    <ClInclude Include="EASTL\scoped_ptr.h" />
+    <ClInclude Include="EASTL\set.h" />
+    <ClInclude Include="EASTL\shared_array.h" />
+    <ClInclude Include="EASTL\shared_ptr.h" />
+    <ClInclude Include="EASTL\slist.h" />
+    <ClInclude Include="EASTL\sort.h" />
+    <ClInclude Include="EASTL\stack.h" />
+    <ClInclude Include="EASTL\string.h" />
+    <ClInclude Include="EASTL\tuple.h" />
+    <ClInclude Include="EASTL\type_traits.h" />
+    <ClInclude Include="EASTL\unique_ptr.h" />
+    <ClInclude Include="EASTL\utility.h" />
+    <ClInclude Include="EASTL\vector.h" />
+    <ClInclude Include="EASTL\vector_map.h" />
+    <ClInclude Include="EASTL\vector_multimap.h" />
+    <ClInclude Include="EASTL\vector_multiset.h" />
+    <ClInclude Include="EASTL\vector_set.h" />
+    <ClInclude Include="EASTL\version.h" />
+    <ClInclude Include="EASTL\weak_ptr.h" />
+    <ClInclude Include="SourceCode\DLL\Application.h" />
+    <ClInclude Include="SourceCode\DLL\resource.h" />
+    <ClInclude Include="SourceCode\DLL\SpaceToolIconOverride.h" />
+    <ClInclude Include="SourceCode\DLL\stdafx.h" />
+    <ClInclude Include="SourceCode\DLL\targetver.h" />
+    <ClInclude Include="SourceCode\DLL\TextureOverride.h" />
+    <ClInclude Include="Spore\Anim\anim_cid.h" />
+    <ClInclude Include="Spore\Anim\anim_csd.h" />
+    <ClInclude Include="Spore\Anim\SPAnimation.h" />
+    <ClInclude Include="Spore\Anim\cAnimManagerImpl.h" />
+    <ClInclude Include="Spore\Anim\cAnimWorld.h" />
+    <ClInclude Include="Spore\Anim\IAnimManager.h" />
+    <ClInclude Include="Spore\Anim\IAnimWorld.h" />
+    <ClInclude Include="Spore\Anim\TLSA.h" />
+    <ClInclude Include="Spore\App\AppData.h" />
+    <ClInclude Include="Spore\App\Canvas.h" />
+    <ClInclude Include="Spore\App\cAppSystem.h" />
+    <ClInclude Include="Spore\App\cArithmeticaResource.h" />
+    <ClInclude Include="Spore\App\cCellModeStrategy.h" />
+    <ClInclude Include="Spore\App\cJob.h" />
+    <ClInclude Include="Spore\App\cLocaleManager.h" />
+    <ClInclude Include="Spore\App\cMouseCamera.h" />
+    <ClInclude Include="Spore\App\CommandLine.h" />
+    <ClInclude Include="Spore\App\ConfigManager.h" />
+    <ClInclude Include="Spore\App\cSporeApp.h" />
+    <ClInclude Include="Spore\App\cStringDetokenizer.h" />
+    <ClInclude Include="Spore\App\FileDrop.h" />
+    <ClInclude Include="Spore\App\cCreatureModeStrategy.h" />
+    <ClInclude Include="Spore\App\GameSpace.h" />
+    <ClInclude Include="Spore\App\IMessageRC.h" />
+    <ClInclude Include="Spore\App\ITokenTranslator.h" />
+    <ClInclude Include="Spore\App\IDGenerator.h" />
+    <ClInclude Include="Spore\App\JobManager.h" />
+    <ClInclude Include="Spore\App\Thumbnail_cImportExport.h" />
+    <ClInclude Include="Spore\Editors\cSPEditorVerbTrayCollection.h" />
+    <ClInclude Include="Spore\Editors\cSPEditorVerbIcon.h" />
+    <ClInclude Include="Spore\Editors\cSPEditorVerbIconTray.h" />
+    <ClInclude Include="Spore\Graphics\cCubeMapCoord.h" />
+    <ClInclude Include="Spore\Graphics\cCubeMapIndex.h" />
+    <ClInclude Include="Spore\IO\IniFile.h" />
+    <ClInclude Include="Spore\IO\StreamCompressionZLib.h" />
+    <ClInclude Include="Spore\Swarm\cDecal.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainDecal.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainSphereDecal.h" />
+    <ClInclude Include="Spore\UI\cSPUIPropertyLayout.h" />
+    <ClInclude Include="Spore\Editors\cSPVerbIconRollover.h" />
+    <ClInclude Include="Spore\Editors\cSPVerbTrayCollection.h" />
+    <ClInclude Include="Spore\Editors\VerbIconEnums.h" />
+    <ClInclude Include="Spore\Editors\VerbIconStructs.h" />
+    <ClInclude Include="Spore\Graphics\cThumbnailManager.h" />
+    <ClInclude Include="Spore\Graphics\LayerSequence.h" />
+    <ClInclude Include="Spore\OpenSSL.h" />
+    <ClInclude Include="Spore\Resource\FakeRecord.h" />
+    <ClInclude Include="Spore\Simulator\cBaseSimulatorInputStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cObstacle.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioEditModeDisplayStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cTribeInputStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cNpcTribeController.h" />
+    <ClInclude Include="Spore\Simulator\cTribeToolData.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\BundleManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\CinematicManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\cSpeciesRelationshipManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Spore\Simulator\SubSystem\GamePlantManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\ObstacleManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\UIAssetDiscoveryManager.h" />
+    <ClInclude Include="Spore\Simulator\UIStateMachine.h" />
+    <ClInclude Include="Spore\BasicIncludes.h" />
+    <ClInclude Include="Spore\Cell.h" />
+    <ClInclude Include="Spore\CppRevEng.h" />
+    <ClInclude Include="Spore\CppRevEngBase.h" />
+    <ClInclude Include="ModAPI\Detouring.h" />
+    <ClInclude Include="Spore\Creations.h" />
+    <ClInclude Include="Spore\Editors\cCreatureDataResource.h" />
+    <ClInclude Include="Spore\Editors\cEditorAnimEvent.h" />
+    <ClInclude Include="Spore\Editors\cEditorResourceProperties.h" />
+    <ClInclude Include="Spore\Editors\cEditorSkinMesh.h" />
+    <ClInclude Include="Spore\Editors\EditorCreatureController.h" />
+    <ClInclude Include="Spore\Editors\cEditorAnimWorld.h" />
+    <ClInclude Include="Spore\Editors\EditorAnimations.h" />
+    <ClInclude Include="Spore\Editors\EditorBaseHandle.h" />
+    <ClInclude Include="Spore\Editors\EditorLimits.h" />
+    <ClInclude Include="Spore\Editors\cEditorSkin.h" />
+    <ClInclude Include="Spore\Editors\INameableEntity.h" />
+    <ClInclude Include="Spore\Editors\PlayModeActor.h" />
+    <ClInclude Include="Spore\Editors\PlayModeBackgrounds.h" />
+    <ClInclude Include="Spore\Editors\IPlayModeModule.h" />
+    <ClInclude Include="Spore\Editors\PlayModeUI.h" />
+    <ClInclude Include="Spore\Editors\VerbIconData.h" />
+    <ClInclude Include="Spore\GeneralAllocator.h" />
+    <ClInclude Include="Spore\Graphics\ActiveState.h" />
+    <ClInclude Include="Spore\Graphics\BufferDraw.h" />
+    <ClInclude Include="Spore\Graphics\cFrustumCull.h" />
+    <ClInclude Include="Spore\Graphics\cImageDataRaw.h" />
+    <ClInclude Include="Spore\Graphics\cMaterialInfo.h" />
+    <ClInclude Include="Spore\Graphics\cMeshData.h" />
+    <ClInclude Include="Spore\Graphics\cMITextureSet.h" />
+    <ClInclude Include="Spore\Graphics\cModelWorld.h" />
+    <ClInclude Include="Spore\Graphics\cRenderManager.h" />
+    <ClInclude Include="Spore\Graphics\cRwDirectResource.h" />
+    <ClInclude Include="Spore\Graphics\GlobalState.h" />
+    <ClInclude Include="Spore\Graphics\GmdlRenderAsset.h" />
+    <ClInclude Include="Spore\Graphics\IAmbientOccluder.h" />
+    <ClInclude Include="Spore\Graphics\IGraphicsManager.h" />
+    <ClInclude Include="Spore\Graphics\IShadowWorld.h" />
+    <ClInclude Include="Spore\Graphics\Light.h" />
+    <ClInclude Include="Spore\Graphics\cModelInstance.h" />
+    <ClInclude Include="Spore\Graphics\RawImage.h" />
+    <ClInclude Include="Spore\Graphics\RenderStatistics.h" />
+    <ClInclude Include="Spore\Graphics\cLayerGroup.h" />
+    <ClInclude Include="Spore\Graphics\ShaderData.h" />
+    <ClInclude Include="Spore\Graphics\GeneratedMesh.h" />
+    <ClInclude Include="Spore\IO\Constants.h" />
+    <ClInclude Include="Spore\ModAPI.h" />
+    <ClInclude Include="SourceCode\Utility.h" />
+    <ClInclude Include="Spore\Anim\AnimatedCreature.h" />
+    <ClInclude Include="Spore\Anim\CreatureBlock.h" />
+    <ClInclude Include="Spore\Editors\ContentValidation.h" />
+    <ClInclude Include="Spore\Graphics\IThumbnailManager.h" />
+    <ClInclude Include="Spore\Palettes\AdvancedItemViewer.h" />
+    <ClInclude Include="Spore\Palettes\cSPScenarioBrushItemUI.h" />
+    <ClInclude Include="Spore\Palettes\PaletteInfo.h" />
+    <ClInclude Include="Spore\Palettes\PaletteIterator.h" />
+    <ClInclude Include="Spore\Palettes\PaletteSubcategoriesUI.h" />
+    <ClInclude Include="Spore\Palettes\SwatchManager.h" />
+    <ClInclude Include="Spore\Pollinator\AchievementsManager.h" />
+    <ClInclude Include="Spore\Pollinator\cAssetMetadata.h" />
+    <ClInclude Include="Spore\Pollinator\cSPAchievementSerializer.h" />
+    <ClInclude Include="Spore\RenderWare\IRwResource.h" />
+    <ClInclude Include="Spore\Resource\DatabaseDirectoryFiles.h" />
+    <ClInclude Include="Spore\Resource\IRecord.h" />
+    <ClInclude Include="Spore\Resource\Paths.h" />
+    <ClInclude Include="Spore\Resource\RecordInfo.h" />
+    <ClInclude Include="Spore\Simulator\cAbilityUIMap.h" />
+    <ClInclude Include="Spore\Simulator\cAnimalCargoInfo.h" />
+    <ClInclude Include="Spore\Simulator\cArtilleryProjectile.h" />
+    <ClInclude Include="Spore\Simulator\cBaseDisplayStrategy.h" />
+    <ClInclude Include="Spore\Simulator\AI\cBehaviorTreeData.h" />
+    <ClInclude Include="Spore\Simulator\cBuildingEntertainment.h" />
+    <ClInclude Include="Spore\Simulator\cBuildingCityHall.h" />
+    <ClInclude Include="Spore\Simulator\cBuildingHouse.h" />
+    <ClInclude Include="Spore\Simulator\cBuildingIndustry.h" />
+    <ClInclude Include="Spore\Simulator\cCollectableItems.h" />
+    <ClInclude Include="Spore\Simulator\cCombatSimulator.h" />
+    <ClInclude Include="Spore\Simulator\cCommodityNode.h" />
+    <ClInclude Include="Spore\Simulator\cCommunityLayout.h" />
+    <ClInclude Include="Spore\Simulator\cCreatureCitizen.h" />
+    <ClInclude Include="Spore\Simulator\cCreatureDisplayStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cCreatureGameData.h" />
+    <ClInclude Include="Spore\Simulator\cCulturalProjectile.h" />
+    <ClInclude Include="Spore\Simulator\cCulturalTarget.h" />
+    <ClInclude Include="Spore\Simulator\cDeepSpaceProjectile.h" />
+    <ClInclude Include="Spore\Simulator\cDefaultToolProjectile.h" />
+    <ClInclude Include="Spore\Simulator\cEgg.h" />
+    <ClInclude Include="Spore\Simulator\cEllipticalOrbit.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellGame.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellQueryLinkedPool.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellObjectData.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellResource.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellScaleInfo.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellSerialiazibleData.h" />
+    <ClInclude Include="Spore\Simulator\Cell\CellAnimations.h" />
+    <ClInclude Include="Spore\Simulator\Cell\CellFunctions.h" />
+    <ClInclude Include="Spore\Simulator\cFlakProjectile.h" />
+    <ClInclude Include="Spore\Simulator\cGamePlant.h" />
+    <ClInclude Include="Spore\Simulator\cGameplayMarker.h" />
+    <ClInclude Include="Spore\Simulator\cHerd.h" />
+    <ClInclude Include="Spore\Simulator\cHitSphere.h" />
+    <ClInclude Include="Spore\Simulator\cICBM.h" />
+    <ClInclude Include="Spore\Simulator\cInterCityRoad.h" />
+    <ClInclude Include="Spore\Simulator\cMission.h" />
+    <ClInclude Include="Spore\Simulator\cMovableDestructibleOrnament.h" />
+    <ClInclude Include="Spore\Simulator\cNest.h" />
+    <ClInclude Include="Spore\Simulator\cObjectInstanceInventoryItem.h" />
+    <ClInclude Include="Spore\Simulator\cObjectPool.h" />
+    <ClInclude Include="Spore\Simulator\cPlanetaryArtifact.h" />
+    <ClInclude Include="Spore\Simulator\cPlantCargoInfo.h" />
+    <ClInclude Include="Spore\Simulator\cRaidEvent.h" />
+    <ClInclude Include="Spore\Simulator\cRaidPlunderEvent.h" />
+    <ClInclude Include="Spore\Simulator\cResourceProjectile.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioEditHistory.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioEconomy.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioData.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioPlayMode.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioSimulator.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioTerraformMode.h" />
+    <ClInclude Include="Spore\Simulator\cShipBackgroundData.h" />
+    <ClInclude Include="Spore\Simulator\cSimPlanetHighLOD.h" />
+    <ClInclude Include="Spore\Simulator\cSimulatorUniverse.h" />
+    <ClInclude Include="Spore\Simulator\cSolarHitSphere.h" />
+    <ClInclude Include="Spore\Simulator\cSpaceDefenseMissile.h" />
+    <ClInclude Include="Spore\Simulator\cSpaceNames.h" />
+    <ClInclude Include="Spore\Simulator\cSpear.h" />
+    <ClInclude Include="Spore\Simulator\cTimeOfDay.h" />
+    <ClInclude Include="Spore\Simulator\cToolObject.h" />
+    <ClInclude Include="Spore\Simulator\cTotemPole.h" />
+    <ClInclude Include="Spore\Simulator\cTribe.h" />
+    <ClInclude Include="Spore\Simulator\cTribeArchetype.h" />
+    <ClInclude Include="Spore\Simulator\cTribeFoodMat.h" />
+    <ClInclude Include="Spore\Simulator\cTribeHut.h" />
+    <ClInclude Include="Spore\Simulator\cTribePlanner.h" />
+    <ClInclude Include="Spore\Simulator\cTribeTool.h" />
+    <ClInclude Include="Spore\Simulator\cTurret.h" />
+    <ClInclude Include="Spore\Simulator\ICityMusic.h" />
+    <ClInclude Include="Spore\Simulator\cBadgeManager.h" />
+    <ClInclude Include="Spore\Simulator\cMissionManager.h" />
+    <ClInclude Include="Spore\Simulator\IGameDataView.h" />
+    <ClInclude Include="Spore\Simulator\cProjectile.h" />
+    <ClInclude Include="Spore\Simulator\SimulatorEnums.h" />
+    <ClInclude Include="Spore\Simulator\SpaceConstants.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\AnimalSpeciesManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GamePersistenceManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\PlantSpeciesManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\SpaceGfx.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\SpaceTrading.h" />
+    <ClInclude Include="Spore\Skinner\cPaintSystem.h" />
+    <ClInclude Include="Spore\Skinner\cSkinnerTexturePainter.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobAmbientOcclusion.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobApplyBrushes.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobColorDilateRepeat.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobCopyRigblocksTintMaskAlpha.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobExtractTexture.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobPaintParts.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterPipeline.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainter.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobBumpToNormal.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobCopyTex1AlphaToTex0.h" />
+    <ClInclude Include="Spore\Skinner\cSkinPainterJob.h" />
+    <ClInclude Include="Spore\Sporepedia\AssetViewManager.h" />
+    <ClInclude Include="Spore\Sporepedia\cSPUILargeAssetView.h" />
+    <ClInclude Include="Spore\Sporepedia\ISPUILargeAssetView.h" />
+    <ClInclude Include="Spore\Sporepedia\ObjectTemplateDB.h" />
+    <ClInclude Include="Spore\Sporepedia\OTDBParameters.h" />
+    <ClInclude Include="Spore\Simulator\cCivilization.h" />
+    <ClInclude Include="Spore\Simulator\cCommEvent.h" />
+    <ClInclude Include="Spore\Simulator\ConversationResource.h" />
+    <ClInclude Include="Spore\Simulator\cSimPlanetLowLOD.h" />
+    <ClInclude Include="Spore\Simulator\NounClassFactories.h" />
+    <ClInclude Include="Spore\Simulator\Serialization.h" />
+    <ClInclude Include="Spore\Simulator\SerializationTypes.h" />
+    <ClInclude Include="Spore\Simulator\StarID.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\CommManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\cSavedGameHeader.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GameBehaviorManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\SimTicker.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\UIEventLog.h" />
+    <ClInclude Include="Spore\Sporepedia\AssetData.h" />
+    <ClInclude Include="Spore\Sporepedia\IShopperListener.h" />
+    <ClInclude Include="Spore\Sporepedia\AssetBrowserQuery.h" />
+    <ClInclude Include="Spore\Sporepedia\ShopperRequest.h" />
+    <ClInclude Include="Spore\App\cCameraManager.h" />
+    <ClInclude Include="Spore\App\cCheatManager.h" />
+    <ClInclude Include="Spore\App\cGameModeManager.h" />
+    <ClInclude Include="Spore\App\cMessageManager.h" />
+    <ClInclude Include="Spore\App\cPropManager.h" />
+    <ClInclude Include="Spore\App\DefaultCamera.h" />
+    <ClInclude Include="Spore\App\DefaultGameMode.h" />
+    <ClInclude Include="Spore\App\ICamera.h" />
+    <ClInclude Include="Spore\App\IClassManager.h" />
+    <ClInclude Include="Spore\App\IGameMode.h" />
+    <ClInclude Include="Spore\App\IGameModeManager.h" />
+    <ClInclude Include="Spore\App\IMessageListener.h" />
+    <ClInclude Include="Spore\App\IMessageManager.h" />
+    <ClInclude Include="Spore\App\IStateManager.h" />
+    <ClInclude Include="Spore\App\MessageListenerData.h" />
+    <ClInclude Include="Spore\App\StandardMessage.h" />
+    <ClInclude Include="Spore\ArgScript.h" />
+    <ClInclude Include="Spore\ArgScript\ASDeclarations.h" />
+    <ClInclude Include="Spore\ArgScript\FormatParser.h" />
+    <ClInclude Include="Spore\ArgScript\IBlock.h" />
+    <ClInclude Include="Spore\ArgScript\ICommand.h" />
+    <ClInclude Include="Spore\ArgScript\IFunction.h" />
+    <ClInclude Include="Spore\ArgScript\ISpecialBlock.h" />
+    <ClInclude Include="Spore\ArgScript\LambdaParser.h" />
+    <ClInclude Include="Spore\ArgScript\Lexer.h" />
+    <ClInclude Include="Spore\Audio\AudioSystem.h" />
+    <ClInclude Include="Spore\Cheats.h" />
+    <ClInclude Include="Spore\CommonIDs.h" />
+    <ClInclude Include="Spore\CoreAllocatorAdapter.h" />
+    <ClInclude Include="Spore\App\DirectPropertyList.h" />
+    <ClInclude Include="Spore\Editors\BakeManager.h" />
+    <ClInclude Include="Spore\Editors\cEditorResource.h" />
+    <ClInclude Include="Spore\Editors\EditorMessages.h" />
+    <ClInclude Include="Spore\Editors\EditorPlayMode.h" />
+    <ClInclude Include="Spore\Editors\SpeciesManager.h" />
+    <ClInclude Include="Spore\Graphics\cModelInstanceAnimations.h" />
+    <ClInclude Include="Spore\Graphics\CompiledShader.h" />
+    <ClInclude Include="Spore\Graphics\cRenderTargetManager.h" />
+    <ClInclude Include="Spore\Graphics\LambdaLayer.h" />
+    <ClInclude Include="Spore\Graphics\cLightingConfig.h" />
+    <ClInclude Include="Spore\Graphics\MaterialShader.h" />
+    <ClInclude Include="Spore\Graphics\IRenderTargetManager.h" />
+    <ClInclude Include="Spore\Graphics\RenderUtils.h" />
+    <ClInclude Include="Spore\Graphics\ShaderBuilder.h" />
+    <ClInclude Include="Spore\Graphics\ShaderDataUniform.h" />
+    <ClInclude Include="Spore\Graphics\StandardShader.h" />
+    <ClInclude Include="Spore\Palettes\ColorPickerUI.h" />
+    <ClInclude Include="Spore\Palettes\ColorSwatchUI.h" />
+    <ClInclude Include="Spore\Editors\EditorCamera.h" />
+    <ClInclude Include="Spore\GameCiv\GameCiv.h" />
+    <ClInclude Include="Spore\GameCiv\Messages.h" />
+    <ClInclude Include="Spore\Input.h" />
+    <ClInclude Include="Spore\Palettes\ItemViewer.h" />
+    <ClInclude Include="Spore\RenderWare\Animations.h" />
+    <ClInclude Include="Spore\RenderWare\SkeletonsInK.h" />
+    <ClInclude Include="Spore\RenderWare\MorphHandle.h" />
+    <ClInclude Include="Spore\RenderWare\RenderWareFile.h" />
+    <ClInclude Include="Spore\App\ScenarioMode.h" />
+    <ClInclude Include="Spore\Simulator.h" />
+    <ClInclude Include="Spore\Simulator\cAbductToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cArtilleryWeaponStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cBehaviorAgent.h" />
+    <ClInclude Include="Spore\Simulator\cBehaviorBase.h" />
+    <ClInclude Include="Spore\Simulator\cBehaviorEntry.h" />
+    <ClInclude Include="Spore\Simulator\cBehaviorList.h" />
+    <ClInclude Include="Spore\Simulator\cBuilding.h" />
+    <ClInclude Include="Spore\Simulator\cBuildingScenario.h" />
+    <ClInclude Include="Spore\Simulator\cCelestialBody.h" />
+    <ClInclude Include="Spore\Simulator\cCity.h" />
+    <ClInclude Include="Spore\Simulator\cCityTerritory.h" />
+    <ClInclude Include="Spore\Simulator\cCityWalls.h" />
+    <ClInclude Include="Spore\Simulator\cCommunity.h" />
+    <ClInclude Include="Spore\Simulator\cConversation.h" />
+    <ClInclude Include="Spore\Simulator\cCreatureAnimal.h" />
+    <ClInclude Include="Spore\Simulator\cCreatureBase.h" />
+    <ClInclude Include="Spore\Simulator\cCropCirclesToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cCultureSet.h" />
+    <ClInclude Include="Spore\Simulator\cDeepSpaceProjectileToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cDefaultAoEArea.h" />
+    <ClInclude Include="Spore\Simulator\cDefaultAoETool.h" />
+    <ClInclude Include="Spore\Simulator\cDefaultBeamProjectile.h" />
+    <ClInclude Include="Spore\Simulator\cDefaultBeamTool.h" />
+    <ClInclude Include="Spore\Simulator\cDefaultProjectileWeapon.h" />
+    <ClInclude Include="Spore\Simulator\cDragInputProjectileToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cDropCargoToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellGFX.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellUI.h" />
+    <ClInclude Include="Spore\Simulator\cEmpire.h" />
+    <ClInclude Include="Spore\Simulator\cEnergyRepairToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cGameBundleContainer.h" />
+    <ClInclude Include="Spore\Simulator\cGameData.h" />
+    <ClInclude Include="Spore\Simulator\cGameDataUFO.h" />
+    <ClInclude Include="Spore\Simulator\cGameTerrainCursor.h" />
+    <ClInclude Include="Spore\Simulator\cGenesisDeviceToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cGetOutOfUFOToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cGlobalMindEraseToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cGonzagoSimulator.h" />
+    <ClInclude Include="Spore\Simulator\cIdentityColorable.h" />
+    <ClInclude Include="Spore\Simulator\cInteractableObject.h" />
+    <ClInclude Include="Spore\Simulator\cInteractiveOrnament.h" />
+    <ClInclude Include="Spore\Simulator\cLocomotiveObject.h" />
+    <ClInclude Include="Spore\Simulator\cMindEraseToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cPlaceColonyToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cPlaceObjectToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cPlanetRecord.h" />
+    <ClInclude Include="Spore\Simulator\cRallyCallToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cRepairAOEToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cRepairToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cScanToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioAct.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioAsset.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioClass.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioClassAct.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioDialog.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioGoal.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioMarker.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioMarkerAct.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioPosseMember.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioResource.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioString.h" />
+    <ClInclude Include="Spore\Simulator\cSimulatorPlayerUFO.h" />
+    <ClInclude Include="Spore\Simulator\cSimulatorSpaceGame.h" />
+    <ClInclude Include="Spore\Simulator\cSpatialObject.h" />
+    <ClInclude Include="Spore\Simulator\cOrnament.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioPowerup.h" />
+    <ClInclude Include="Spore\Simulator\cPlaceableStructure.h" />
+    <ClInclude Include="Spore\Simulator\cPlanet.h" />
+    <ClInclude Include="Spore\Simulator\cPlayer.h" />
+    <ClInclude Include="Spore\Simulator\cPlayerInventory.h" />
+    <ClInclude Include="Spore\Simulator\cSpaceInventory.h" />
+    <ClInclude Include="Spore\Simulator\cSpeciesProfile.h" />
+    <ClInclude Include="Spore\Simulator\cToggleToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cToolStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cTurretDefenseMissileWeapon.h" />
+    <ClInclude Include="Spore\Simulator\cTurretFlakWeapon.h" />
+    <ClInclude Include="Spore\Simulator\cVehicle.h" />
+    <ClInclude Include="Spore\Simulator\WASDInputStrategy.h" />
+    <ClInclude Include="Spore\Simulator\ISimulatorSerializable.h" />
+    <ClInclude Include="Spore\Simulator\SimulatorBase.h" />
+    <ClInclude Include="Spore\Simulator\ScenarioInputStrategy.h" />
+    <ClInclude Include="Spore\Simulator\SpaceInputStrategy.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\cRelationshipManager.h" />
+    <ClInclude Include="Spore\Simulator\cSolarSystem.h" />
+    <ClInclude Include="Spore\Simulator\cStar.h" />
+    <ClInclude Include="Spore\Simulator\cStarRecord.h" />
+    <ClInclude Include="Spore\Simulator\cVisiblePlanet.h" />
+    <ClInclude Include="Spore\Simulator\GoalCard.h" />
+    <ClInclude Include="Spore\Simulator\cCombatant.h" />
+    <ClInclude Include="Spore\Simulator\cGonzagoTimer.h" />
+    <ClInclude Include="Spore\Simulator\SimulatorMessages.h" />
+    <ClInclude Include="Spore\Palettes\IItemFrameUI.h" />
+    <ClInclude Include="Spore\Palettes\OutfitterItemUI.h" />
+    <ClInclude Include="Spore\Palettes\PaletteCategoryUI.h" />
+    <ClInclude Include="Spore\Palettes\PalettePageUI.h" />
+    <ClInclude Include="Spore\Palettes\PaletteUI.h" />
+    <ClInclude Include="Spore\Editors\PlayAnimButton.h" />
+    <ClInclude Include="Spore\Editors\PlayAnimPanel.h" />
+    <ClInclude Include="Spore\Editors\PlayModeAnimations.h" />
+    <ClInclude Include="Spore\Editors\TuningSpine.h" />
+    <ClInclude Include="Spore\Effects.h" />
+    <ClInclude Include="Spore\FixedPoolAllocator.h" />
+    <ClInclude Include="Spore\App\ICheatManager.h" />
+    <ClInclude Include="Spore\GameModes.h" />
+    <ClInclude Include="Spore\Graphics\cMaterialManager.h" />
+    <ClInclude Include="Spore\Graphics\cModelManager.h" />
+    <ClInclude Include="Spore\App\ICameraManager.h" />
+    <ClInclude Include="Spore\Graphics\cTextureManager.h" />
+    <ClInclude Include="Spore\Graphics\ILightingManager.h" />
+    <ClInclude Include="Spore\Graphics\ILightingWorld.h" />
+    <ClInclude Include="Spore\Graphics\IMaterialManager.h" />
+    <ClInclude Include="Spore\Graphics\IModelManager.h" />
+    <ClInclude Include="Spore\Graphics\IModelWorld.h" />
+    <ClInclude Include="Spore\Graphics\ITextureManager.h" />
+    <ClInclude Include="Spore\Graphics\Model.h" />
+    <ClInclude Include="Spore\Graphics\Texture.h" />
+    <ClInclude Include="Spore\App\cViewer.h" />
+    <ClInclude Include="Spore\IO.h" />
+    <ClInclude Include="Spore\IO\Allocator.h" />
+    <ClInclude Include="Spore\IO\XmlWriter.h" />
+    <ClInclude Include="Spore\Messaging.h" />
+    <ClInclude Include="Spore\Models.h" />
+    <ClInclude Include="Spore\Palettes\StandardItemUI.h" />
+    <ClInclude Include="Spore\Properties.h" />
+    <ClInclude Include="Spore\RenderWare\AnimationSkin.h" />
+    <ClInclude Include="Spore\RenderWare\CompiledState.h" />
+    <ClInclude Include="Spore\RenderWare\IndexBuffer.h" />
+    <ClInclude Include="Spore\RenderWare\KeyframeAnim.h" />
+    <ClInclude Include="Spore\RenderWare\KeyframeData.h" />
+    <ClInclude Include="Spore\RenderWare\Mesh.h" />
+    <ClInclude Include="Spore\RenderWare\MeshCompiledStateLink.h" />
+    <ClInclude Include="Spore\RenderWare\Raster.h" />
+    <ClInclude Include="Spore\RenderWare\RWHeader.h" />
+    <ClInclude Include="Spore\RenderWare\RWMath.h" />
+    <ClInclude Include="Spore\RenderWare\RWSectionInfo.h" />
+    <ClInclude Include="Spore\RenderWare\Skeleton.h" />
+    <ClInclude Include="Spore\RenderWare\SkinMatrixBuffer.h" />
+    <ClInclude Include="Spore\RenderWare\SkinsInK.h" />
+    <ClInclude Include="Spore\RenderWare\VertexBuffer.h" />
+    <ClInclude Include="Spore\RenderWare\VertexDescription.h" />
+    <ClInclude Include="Spore\Resources.h" />
+    <ClInclude Include="Spore\Resource\DatabasePackedFile.h" />
+    <ClInclude Include="Spore\Graphics\IRenderer.h" />
+    <ClInclude Include="Spore\Graphics\ILayer.h" />
+    <ClInclude Include="Spore\ICoreAllocator.h" />
+    <ClInclude Include="Spore\IO\FileStream.h" />
+    <ClInclude Include="Spore\IO\EAIOZoneObject.h" />
+    <ClInclude Include="Spore\Resource\PFRecordBase.h" />
+    <ClInclude Include="Spore\Resource\IKeyFilter.h" />
+    <ClInclude Include="Spore\Resource\IResourceFactory.h" />
+    <ClInclude Include="Spore\Resource\IResourceManager.h" />
+    <ClInclude Include="Spore\Resource\ICache.h" />
+    <ClInclude Include="Spore\Resource\PFRecordWrite.h" />
+    <ClInclude Include="Spore\IO\StreamAdapter.h" />
+    <ClInclude Include="Spore\IO\StreamBuffer.h" />
+    <ClInclude Include="Spore\IO\StreamChild.h" />
+    <ClInclude Include="Spore\IO\StreamFixedMemory.h" />
+    <ClInclude Include="Spore\IO\StreamMemory.h" />
+    <ClInclude Include="Spore\IO\StreamNull.h" />
+    <ClInclude Include="Spore\Resource\ResourceObject.h" />
+    <ClInclude Include="Spore\Resource\ThreadedObject.h" />
+    <ClInclude Include="Spore\Resource\Database.h" />
+    <ClInclude Include="Spore\Mutex.h" />
+    <ClInclude Include="Spore\Resource\PFIndexModifiable.h" />
+    <ClInclude Include="Spore\Resource\PFRecordRead.h" />
+    <ClInclude Include="Spore\resourceID.h" />
+    <ClInclude Include="Spore\Simulator\Sporepedia.h" />
+    <ClInclude Include="Spore\Editors\EditorRequest.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\cLivingUniverse.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GameInputManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GameModeManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GameNounManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GameTimeManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GameViewManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\cStrategy.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GonzagoPhysics.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\ISimulatorUIGraphic.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\PlanetModel.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\SimulatorSystem.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\SpacePlayerData.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\SpeciesManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\StarManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\TerraformingManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\ToolManager.h" />
+    <ClInclude Include="Spore\Simulator\tGameDataVectorT.h" />
+    <ClInclude Include="Spore\Simulator\UnknownCreatureClass.h" />
+    <ClInclude Include="Spore\Swarm\cCameraEffect.h" />
+    <ClInclude Include="Spore\Swarm\CollectionResource.h" />
+    <ClInclude Include="Spore\Swarm\Components\cCameraDescription.h" />
+    <ClInclude Include="Spore\Swarm\Components\cDistributeDescription.h" />
+    <ClInclude Include="Spore\Swarm\cDistributeEffect.h" />
+    <ClInclude Include="Spore\Swarm\Components\DistributeEffect.h" />
+    <ClInclude Include="Spore\Swarm\Components\SkinpaintDistributeEffect.h" />
+    <ClInclude Include="Spore\Swarm\Components\SkinpaintParticleEffect.h" />
+    <ClInclude Include="Spore\Swarm\Components\SkinpaintSettingsEffect.h" />
+    <ClInclude Include="Spore\Swarm\Constants.h" />
+    <ClInclude Include="Spore\Swarm\cSurfaceInfo.h" />
+    <ClInclude Include="Spore\Swarm\cEffectsManager.h" />
+    <ClInclude Include="Spore\Swarm\cEffectsWorld.h" />
+    <ClInclude Include="Spore\Swarm\ICameraManager.h" />
+    <ClInclude Include="Spore\Swarm\IComponent.h" />
+    <ClInclude Include="Spore\Swarm\IVisualEffect.h" />
+    <ClInclude Include="Spore\Swarm\IEffectMap.h" />
+    <ClInclude Include="Spore\Swarm\IEffectsWorld.h" />
+    <ClInclude Include="Spore\Swarm\ISurface.h" />
+    <ClInclude Include="Spore\Swarm\IEffectsManager.h" />
+    <ClInclude Include="Spore\Clock.h" />
+    <ClInclude Include="Spore\Swarm\cGlobalParams.h" />
+    <ClInclude Include="Spore\Swarm\ParticleStreamers.h" />
+    <ClInclude Include="Spore\Terrain.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainMapSet.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainShaderMgr.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainStateMgr.h" />
+    <ClInclude Include="Spore\Terrain\cWeatherManager.h" />
+    <ClInclude Include="Spore\Terrain\ITerrain.h" />
+    <ClInclude Include="Spore\Terrain\ITerrainResourceManager.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainMap.h" />
+    <ClInclude Include="Spore\Terrain\TerrainRendering.h" />
+    <ClInclude Include="Spore\Terrain\TerrainShaderData.h" />
+    <ClInclude Include="Spore\Transform.h" />
+    <ClInclude Include="Spore\Resource\cResourceManager.h" />
+    <ClInclude Include="Spore\Simulator\cCreatureAbility.h" />
+    <ClInclude Include="Spore\App\SPPropertyIDs.h" />
+    <ClInclude Include="Spore\Swarm\Components\Attractor.h" />
+    <ClInclude Include="Spore\Swarm\EffectDirectory.h" />
+    <ClInclude Include="Spore\ArgScript\Line.h" />
+    <ClInclude Include="Spore\ArgScript\IParser.h" />
+    <ClInclude Include="Spore\Editors\Editor.h" />
+    <ClInclude Include="Spore\Editors\EditorModel.h" />
+    <ClInclude Include="Spore\Palettes\PaletteMain.h" />
+    <ClInclude Include="Spore\Editors\EditorRigblock.h" />
+    <ClInclude Include="Spore\Editors\EditorUI.h" />
+    <ClInclude Include="Spore\IO\IStream.h" />
+    <ClInclude Include="Spore\GalaxyGameEntry\GlobalGGEUI.h" />
+    <ClInclude Include="Spore\Hash.h" />
+    <ClInclude Include="Spore\Internal.h" />
+    <ClInclude Include="Spore\LocalizedString.h" />
+    <ClInclude Include="Spore\MathUtils.h" />
+    <ClInclude Include="Spore\Object.h" />
+    <ClInclude Include="Spore\Palettes\PaletteCategory.h" />
+    <ClInclude Include="Spore\Palettes\PaletteItem.h" />
+    <ClInclude Include="Spore\Palettes\PalettePage.h" />
+    <ClInclude Include="Spore\App\Property.h" />
+    <ClInclude Include="Spore\App\PropertyList.h" />
+    <ClInclude Include="Spore\App\IPropManager.h" />
+    <ClInclude Include="Spore\ResourceKey.h" />
+    <ClInclude Include="Spore\Simulator\cSpaceInventoryItem.h" />
+    <ClInclude Include="Spore\Simulator\cSpaceToolData.h" />
+    <ClInclude Include="Spore\Swarm\Components\cDescription.h" />
+    <ClInclude Include="Spore\Swarm\Components\ParticleEffect.h" />
+    <ClInclude Include="Spore\Swarm\Components\PathPoint.h" />
+    <ClInclude Include="Spore\Swarm\Components\RandomWalk.h" />
+    <ClInclude Include="Spore\Swarm\cVisualEffect.h" />
+    <ClInclude Include="Spore\Swarm\Components\VisualEffect.h" />
+    <ClInclude Include="Spore\Swarm\Components\VisualEffectBlock.h" />
+    <ClInclude Include="Spore\Swarm\Components\Wiggle.h" />
+    <ClInclude Include="Spore\Swarm\Components\cTextureSlot.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainSphere.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainSphereQuad.h" />
+    <ClInclude Include="Spore\UI\AssetBrowserAssetGridUI.h" />
+    <ClInclude Include="Spore\UI\AssetDiscoveryCard.h" />
+    <ClInclude Include="Spore\UI\CivCommCursorAttachment.h" />
+    <ClInclude Include="Spore\UI\cSPAssetView.h" />
+    <ClInclude Include="Spore\UI\cUINewProgressBar.h" />
+    <ClInclude Include="Spore\UI\CursorAttachment.h" />
+    <ClInclude Include="Spore\UI\EditorNamePanel.h" />
+    <ClInclude Include="Spore\UI\GameSettings.h" />
+    <ClInclude Include="Spore\UI\HintManager.h" />
+    <ClInclude Include="Spore\UI\cSPUILayeredObject.h" />
+    <ClInclude Include="Spore\UI\GlobalUI.h" />
+    <ClInclude Include="Spore\UI\ITokenTranslator.h" />
+    <ClInclude Include="Spore\UI\LayerManager.h" />
+    <ClInclude Include="Spore\UI\Minimap.h" />
+    <ClInclude Include="Spore\UI\SimulatorRollovers.h" />
+    <ClInclude Include="Spore\UI\ScrollFrameVertical.h" />
+    <ClInclude Include="Spore\UI\SpaceGameUI.h" />
+    <ClInclude Include="Spore\UI\cSPUITextZoom.h" />
+    <ClInclude Include="Spore\UI\SpaceToolPanelUI.h" />
+    <ClInclude Include="Spore\UI\TiledScrollPanel.h" />
+    <ClInclude Include="Spore\UserInterface.h" />
+    <ClInclude Include="Spore\UTFWin\Allocator.h" />
+    <ClInclude Include="Spore\UTFWin\BehaviourTimeRamp.h" />
+    <ClInclude Include="Spore\UTFWin\ButtonDrawableRadio.h" />
+    <ClInclude Include="Spore\UTFWin\ButtonDrawableStandard.h" />
+    <ClInclude Include="Spore\UTFWin\CascadeEffect.h" />
+    <ClInclude Include="Spore\UTFWin\ComboBoxDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\Constants.h" />
+    <ClInclude Include="Spore\UTFWin\cSPUIBehaviorEventBase.h" />
+    <ClInclude Include="Spore\UTFWin\cSPUIMessageBox.h" />
+    <ClInclude Include="Spore\UTFWin\CursorManager.h" />
+    <ClInclude Include="Spore\UTFWin\Cursors.h" />
+    <ClInclude Include="Spore\UTFWin\DialogDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\Effect.h" />
+    <ClInclude Include="Spore\UTFWin\EventPropertyObject.h" />
+    <ClInclude Include="Spore\UTFWin\EventTimeFunctionBase.h" />
+    <ClInclude Include="Spore\UTFWin\FadeEffect.h" />
+    <ClInclude Include="Spore\UTFWin\FrameDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\GlideEffect.h" />
+    <ClInclude Include="Spore\UTFWin\Graphics2D.h" />
+    <ClInclude Include="Spore\UTFWin\IButton.h" />
+    <ClInclude Include="Spore\UTFWin\IComboBox.h" />
+    <ClInclude Include="Spore\UTFWin\IDialog.h" />
+    <ClInclude Include="Spore\UTFWin\InflateEffect.h" />
+    <ClInclude Include="Spore\UTFWin\InteractiveWindow.h" />
+    <ClInclude Include="Spore\UTFWin\InteractiveWinProc.h" />
+    <ClInclude Include="Spore\UTFWin\ISlider.h" />
+    <ClInclude Include="Spore\UTFWin\IText.h" />
+    <ClInclude Include="Spore\UTFWin\ITextEdit.h" />
+    <ClInclude Include="Spore\UTFWin\ITreeView.h" />
+    <ClInclude Include="Spore\UTFWin\IWinProc.h" />
+    <ClInclude Include="Spore\UTFWin\ILayoutElement.h" />
+    <ClInclude Include="Spore\UTFWin\ILayoutStyle.h" />
+    <ClInclude Include="Spore\UTFWin\LayoutReader.h" />
+    <ClInclude Include="Spore\UTFWin\Message.h" />
+    <ClInclude Include="Spore\UTFWin\ModulateEffect.h" />
+    <ClInclude Include="Spore\UTFWin\OutlineFormat.h" />
+    <ClInclude Include="Spore\UTFWin\IDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\Image.h" />
+    <ClInclude Include="Spore\UTFWin\ImageDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\PerspectiveEffect.h" />
+    <ClInclude Include="Spore\UTFWin\ProportionalLayout.h" />
+    <ClInclude Include="Spore\UTFWin\RotateEffect.h" />
+    <ClInclude Include="Spore\UTFWin\ScrollbarDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\Serialization.h" />
+    <ClInclude Include="Spore\UTFWin\SimpleLayout.h" />
+    <ClInclude Include="Spore\UTFWin\SliderDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\SpinnerDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\SporeAnimatedIconWin.h" />
+    <ClInclude Include="Spore\UTFWin\SporeStdDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\SporeStdDrawableImageInfo.h" />
+    <ClInclude Include="Spore\UTFWin\SporeTooltipWinProc.h" />
+    <ClInclude Include="Spore\UTFWin\StdDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\TreeNode.h" />
+    <ClInclude Include="Spore\UTFWin\UILayout.h" />
+    <ClInclude Include="Spore\UTFWin\UILayoutObjects.h" />
+    <ClInclude Include="Spore\UTFWin\IWindow.h" />
+    <ClInclude Include="Spore\UTFWin\UIRenderer.h" />
+    <ClInclude Include="Spore\UTFWin\UTFWinObject.h" />
+    <ClInclude Include="Spore\UTFWin\VariableWidthDrawable.h" />
+    <ClInclude Include="Spore\UTFWin\WinButton.h" />
+    <ClInclude Include="Spore\UTFWin\WinComboBox.h" />
+    <ClInclude Include="Spore\UTFWin\Window.h" />
+    <ClInclude Include="Spore\UTFWin\WindowIterators.h" />
+    <ClInclude Include="Spore\UTFWin\IWindowManager.h" />
+    <ClInclude Include="Spore\UTFWin\WinGrid.h" />
+    <ClInclude Include="Spore\UTFWin\WinSlider.h" />
+    <ClInclude Include="Spore\UTFWin\WinTextEdit.h" />
+    <ClInclude Include="Spore\UTFWin\WinTreeView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SourceCode\DLL\AddressesOpenSSL.cpp" />
+    <ClCompile Include="SourceCode\Allocator.cpp" />
+    <ClCompile Include="SourceCode\Anim\Animations.cpp" />
+    <ClCompile Include="SourceCode\App\App.cpp" />
+    <ClCompile Include="SourceCode\App\Cameras.cpp" />
+    <ClCompile Include="SourceCode\App\CheatManager.cpp" />
+    <ClCompile Include="SourceCode\App\GameModes.cpp" />
+    <ClCompile Include="SourceCode\App\LocaleManager.cpp" />
+    <ClCompile Include="SourceCode\App\Messages.cpp" />
+    <ClCompile Include="SourceCode\App\PropertyList.cpp" />
+    <ClCompile Include="SourceCode\App\PropManager.cpp" />
+    <ClCompile Include="SourceCode\App\ScenarioMode.cpp" />
+    <ClCompile Include="SourceCode\App\Viewer.cpp" />
+    <ClCompile Include="SourceCode\ArgScript\ClassManager.cpp" />
+    <ClCompile Include="SourceCode\Audio\AudioSystem.cpp" />
+    <ClCompile Include="SourceCode\Debugging.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesAnim.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesApp.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesArgScript.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesAudio.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesEditors.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesGalaxyGameEntry.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesGraphics.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesIO.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesMisc.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesPalettes.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesPollinator.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesRenderWare.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesResource.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesSimulator.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesSkinner.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesSporepedia.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesSwarm.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesTerrain.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesUI.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesUTFWin.cpp" />
+    <ClCompile Include="SourceCode\DLL\Application.cpp" />
+    <ClCompile Include="SourceCode\DLL\dllmain.cpp" />
+    <ClCompile Include="SourceCode\DLL\DllModAPI.cpp" />
+    <ClCompile Include="SourceCode\DLL\SpaceToolIconOverride.cpp" />
+    <ClCompile Include="SourceCode\DLL\stdafx.cpp" />
+    <ClCompile Include="SourceCode\DLL\TextureOverride.cpp" />
+    <ClCompile Include="SourceCode\EASTL\allocator_eastl.cpp" />
+    <ClCompile Include="SourceCode\EASTL\assert.cpp" />
+    <ClCompile Include="SourceCode\EASTL\EAMemory.cpp" />
+    <ClCompile Include="SourceCode\EASTL\EASprintf.cpp" />
+    <ClCompile Include="SourceCode\EASTL\fixed_pool.cpp" />
+    <ClCompile Include="SourceCode\EASTL\hashtable.cpp" />
+    <ClCompile Include="SourceCode\EASTL\intrusive_list.cpp" />
+    <ClCompile Include="SourceCode\EASTL\numeric_limits.cpp" />
+    <ClCompile Include="SourceCode\EASTL\red_black_tree.cpp" />
+    <ClCompile Include="SourceCode\EASTL\string.cpp" />
+    <ClCompile Include="SourceCode\EASTL\thread_support.cpp" />
+    <ClCompile Include="SourceCode\Editors\BakeManager.cpp" />
+    <ClCompile Include="SourceCode\Editors\Colorpickers.cpp" />
+    <ClCompile Include="SourceCode\Editors\Editor.cpp" />
+    <ClCompile Include="SourceCode\Editors\EditorCamera.cpp" />
+    <ClCompile Include="SourceCode\Editors\EditorPlayMode.cpp" />
+    <ClCompile Include="SourceCode\Editors\EditorRequest.cpp" />
+    <ClCompile Include="SourceCode\Editors\PaletteItemFrame.cpp" />
+    <ClCompile Include="SourceCode\Editors\SpeciesManager.cpp" />
+    <ClCompile Include="SourceCode\Graphics\GraphicsManager.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Shadows.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ThumbnailManager.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderTargets.cpp" />
+    <ClCompile Include="SourceCode\Graphics\GeneratedMesh.cpp" />
+    <ClCompile Include="SourceCode\IO\IniFile.cpp" />
+    <ClCompile Include="SourceCode\OpenSSL.cpp" />
+    <ClCompile Include="SourceCode\Pollinator\Pollinator.cpp" />
+    <ClCompile Include="SourceCode\RenderWare\Raster.cpp" />
+    <ClCompile Include="SourceCode\RenderWare\RenderWare.cpp" />
+    <ClCompile Include="SourceCode\RenderWare\RWMesh.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cCity.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cCreatureAbility.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cCreatureAnimal.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cCultureSet.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cEmpire.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cGameData.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cGameDataUFO.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cGameTerrainCursor.cpp" />
+    <ClCompile Include="SourceCode\Simulator\CommManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\CreatureGame.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cSimulatorPlayerUFO.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cSpatialObject.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cTribe.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cVehicle.cpp" />
+    <ClCompile Include="SourceCode\Simulator\GameBehaviorManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\GameInputManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\GameModeManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\GameTimeManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\GameViewManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\MissionManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\PlanetModel.cpp" />
+    <ClCompile Include="SourceCode\Simulator\Planets.cpp" />
+    <ClCompile Include="SourceCode\Simulator\RelationshipManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\Scenario.cpp" />
+    <ClCompile Include="SourceCode\Simulator\Serialization.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SimulatorCell.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SimulatorClock.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SimulatorMessages.cpp" />
+    <ClCompile Include="SourceCode\Editors\EditorPalettes.cpp" />
+    <ClCompile Include="SourceCode\FixedPoolAllocator.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Lighting.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Materials.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Models.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Rendering.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Textures.cpp" />
+    <ClCompile Include="SourceCode\IO\IODefinitions.cpp" />
+    <ClCompile Include="SourceCode\IO\ResourceManager.cpp" />
+    <ClCompile Include="SourceCode\IO\StreamDefinitions.cpp" />
+    <ClCompile Include="SourceCode\IO\ThreadedObject.cpp" />
+    <ClCompile Include="SourceCode\IO\XML.cpp" />
+    <ClCompile Include="SourceCode\LocalizedString.cpp" />
+    <ClCompile Include="SourceCode\Mutex.cpp" />
+    <ClCompile Include="SourceCode\RenderWare\RWBuffers.cpp" />
+    <ClCompile Include="SourceCode\RenderWare\RWSkeleton.cpp" />
+    <ClCompile Include="SourceCode\Simulator\GameNounManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SimulatorMisc.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SimulatorSpaceGame.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SimulatorSystem.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cStarRecord.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SolarSystem.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SpaceInventory.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SpacePlayerData.cpp" />
+    <ClCompile Include="SourceCode\Simulator\StarManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\Terraforming.cpp" />
+    <ClCompile Include="SourceCode\Simulator\ToolManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\Tools.cpp" />
+    <ClCompile Include="SourceCode\Simulator\UIEventLog.cpp" />
+    <ClCompile Include="SourceCode\Skinner.cpp" />
+    <ClCompile Include="SourceCode\Sporepedia\Assetbrowser.cpp" />
+    <ClCompile Include="SourceCode\Sporepedia\AssetData.cpp" />
+    <ClCompile Include="SourceCode\Sporepedia\Shopper.cpp" />
+    <ClCompile Include="SourceCode\Swarm\Effects.cpp" />
+    <ClCompile Include="SourceCode\Swarm\SwarmManager.cpp" />
+    <ClCompile Include="SourceCode\Clock.cpp" />
+    <ClCompile Include="SourceCode\Terrain\Terrain.cpp" />
+    <ClCompile Include="SourceCode\UI\cSPUIPropertyLayout.cpp" />
+    <ClCompile Include="SourceCode\UI\HintManager.cpp" />
+    <ClCompile Include="SourceCode\UI\LayerManager.cpp" />
+    <ClCompile Include="SourceCode\UI\ScrollFrame.cpp" />
+    <ClCompile Include="SourceCode\UI\cSPUITextZoom.cpp" />
+    <ClCompile Include="SourceCode\UI\SpaceGameUI.cpp" />
+    <ClCompile Include="SourceCode\UI\UI.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Cursors.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Defaults.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Drawables.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Events.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Graphics2D.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Image.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Interactives.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\OutlineFormat.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Tooltips.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\UIEffects.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\UILayout.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\UTFWinAllocator.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\LayoutElements.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\UISerialization.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\Window.cpp" />
+    <ClCompile Include="SourceCode\ArgScript\ArgScript.cpp" />
+    <ClCompile Include="SourceCode\Math.cpp" />
+    <ClCompile Include="SourceCode\Object.cpp" />
+    <ClCompile Include="SourceCode\ResourceKey.cpp" />
+    <ClCompile Include="SourceCode\UTFWin\WindowManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\cSpeciesRelationshipManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="EASTL.natvis" />
+    <Natvis Include="SporeDebug.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SourceCode\DLL\VersionInfo.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <Target Name="BuildDlls">
+    <Message Text="Compiling $(Config) DLLs for Disk version, build $(BuildVer)..." />
+    <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=2" />
+    <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.march2017.dll" />
+    <Message Text="Compiling $(Config) DLLs for March2017 version, build $(BuildVer)..." />
+    <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=0" />
+    <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.disk.dll" />
+  </Target>
+  <Target Name="BuildCombinedDll">
+    <Message Text="Compiling $(Config) DLL, build $(BuildVer)..." />
+    <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=10" />
+    <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.combined.dll" />
+  </Target>
+</Project>
