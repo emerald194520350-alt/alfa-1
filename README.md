@@ -64,3 +64,7 @@ When reporting a problem, include `%TEMP%\SporeCoop.Probe.log` and the exact las
 This repository contains the mod source, session server, launch scripts, tests, and the Spore ModAPI headers used to build it. Generated binaries, local save data, registry backups, and temporary build output are intentionally excluded.
 
 SporeCoop is an independent community project and is not affiliated with or endorsed by Electronic Arts or Maxis.
+
+## License
+
+The original SporeCoop source code in this repository is released under the [MIT License](LICENSE). Third-party components, including Spore ModAPI and its bundled dependencies, remain subject to their respective licenses.
